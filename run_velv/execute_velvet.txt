@@ -1,0 +1,2 @@
+./velveth results/velv/mt_21_51_time/ 21,51,10 -fasta -short reads/humanMT_reads.fasta 
+./velvetg results/velv/mt_time/ -scaffolding no -very_clean yes 
