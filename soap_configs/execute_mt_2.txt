@@ -1,0 +1,6 @@
+# human mitochondrial dna, rd_len 100, genome_size 16,569 bp
+time SOAPdenovo-127mer all -s soap_configs/mt.config -o results/soap/mt_k43_time/mt_k43 -K 43 -V
+time SOAPdenovo-127mer all -s soap_configs/mt.config -o results/soap/mt_k45_time/mt_k45 -K 45 -V
+time SOAPdenovo-127mer all -s soap_configs/mt.config -o results/soap/mt_k47_time/mt_k47 -K 47 -V
+time SOAPdenovo-127mer all -s soap_configs/mt.config -o results/soap/mt_k49_time/mt_k49 -K 49 -V
+

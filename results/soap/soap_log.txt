@@ -1,0 +1,812 @@
+
+Version 2.04: released on July 13th, 2012
+Compile Jul  9 2013	11:57:30
+
+********************
+Pregraph
+********************
+
+Parameters: pregraph -s soap_configs/mt.config -K 21 -o results/soap/mt_k21_18_01_at_11_43_29/mt_k21 
+
+In soap_configs/mt.config, 1 lib(s), maximum read length 100, maximum name length 256.
+
+8 thread(s) initialized.
+Import reads from file:
+ reads/humanMT_reads.fasta
+Time spent on hashing reads: 0s, 10000 read(s) processed.
+LIB(s) information:
+ [LIB] 0, avg_ins 0, reverse 0.
+420489 node(s) allocated, 799650 kmer(s) in reads, 799650 kmer(s) processed.
+done hashing nodes
+393180 linear node(s) marked.
+Time spent on marking linear nodes: 0s.
+Time spent on pre-graph construction: 0s.
+
+Start to remove frequency-one-kmer tips shorter than 42.
+Total 8708 tip(s) removed.
+8 thread(s) initialized.
+3677 linear node(s) marked.
+Start to remove tips with minority links.
+242 tip(s) removed in cycle 1.
+0 tip(s) removed in cycle 2.
+Total 242 tip(s) removed.
+8 thread(s) initialized.
+0 linear node(s) marked.
+Time spent on removing tips: 1s.
+
+48886 (24443) edge(s) and 7792 extra node(s) constructed.
+Time spent on constructing edges: 0s.
+
+In file: soap_configs/mt.config, max seq len 100, max name len 256.
+8 thread(s) initialized.
+Import reads from file:
+ reads/humanMT_reads.fasta
+10000 read(s) processed.
+Time spent on:
+ importing reads: 0s,
+ chopping reads to kmers: 0s,
+ searching kmers: 0s,
+ aligning reads to edges: 0s,
+ searching (K+1)mers: 0s,
+ adding pre-arcs: 0s,
+ recording read paths: 0s.
+0 marker(s) output.
+Reads alignment done, 13 read(s) deleted, 33283 pre-arc(s) added.
+LIB(s) information:
+ [LIB] 0, avg_ins 0, reverse 0.
+Time spent on aligning reads: 1s.
+
+14812 vertex(es) output.
+Overall time spent on constructing pre-graph: 0m.
+
+
+********************
+Contig
+********************
+
+Parameters: contig -g results/soap/mt_k21_18_01_at_11_43_29/mt_k21 -M 1 -s soap_configs/mt.config 
+
+There are 14812 kmer(s) in vertex file.
+There are 48886 edge(s) in edge file.
+Kmers sorted.
+48886 edge(s) input.
+66566 pre-arcs loaded.
+12258 none-palindrome edge(s) swapped, 0 palindrome edge(s) processed.
+48886 edge(s) sorted.
+Arcs sorted.
+Start to pinch bubbles, cutoff 0.100000, MAX NODE NUM 3, MAX DIFF NUM 2.
+874 start points, 23569 dheap nodes.
+8622 pair(s) found, 130 pair of path(s) compared, 117 pair(s) merged.
+Sequence comparison failed:
+ Path crossing deleted edge                         0
+ Length difference of two paths greater than two    0
+ Mismatch score greater than cutoff (2)             13
+ Mismatch score ratio greater than cutoff (0.1)     0
+ Path length shorter than (Kmer-1)                  0
+DFibHeap: 121 node(s) allocated.
+683 edge(s) concatenated in cycle 1.
+0 edge(s) concatenated in cycle 2.
+Time spent on pinching bubbles: 0s.
+Start to destroy weak inner edges.
+7306 weak inner edge(s) destroyed in cycle 1.
+121 weak inner edge(s) destroyed in cycle 2.
+0 weak inner edge(s) destroyed in cycle 3.
+14483 dead arc(s) removed.
+998 inner edge(s) with coverage lower than or equal to 1 destroyed.
+2062 dead arc(s) removed.
+6953 edge(s) concatenated in cycle 1.
+479 edge(s) concatenated in cycle 2.
+4 edge(s) concatenated in cycle 3.
+0 edge(s) concatenated in cycle 4.
+Before compacting, 48886 edge(s) existed.
+After compacting, 15558 edge(s) left.
+
+Strict: 0, cutoff length: 42.
+2528 tips cut in cycle 1.
+183 tips cut in cycle 2.
+115 tips cut in cycle 3.
+54 tips cut in cycle 4.
+24 tips cut in cycle 5.
+15 tips cut in cycle 6.
+7 tips cut in cycle 7.
+3 tips cut in cycle 8.
+0 tips cut in cycle 9.
+1886 dead arc(s) removed.
+1437 edge(s) concatenated in cycle 1.
+41 edge(s) concatenated in cycle 2.
+0 edge(s) concatenated in cycle 3.
+Before compacting, 15558 edge(s) existed.
+After compacting, 6744 edge(s) left.
+
+There are 54 contig(s) longer than 100, sum up 5910 bp, with average length 109.
+The longest length is 160 bp, contig N50 is 105 bp,contig N90 is 100 bp.
+3372 contig(s) longer than 22 output.
+
+Time spent on constructing contig: 0m.
+
+
+********************
+Map
+********************
+
+Parameters: map -s soap_configs/mt.config -g results/soap/mt_k21_18_01_at_11_43_29/mt_k21 -K 21 
+
+Kmer size: 21.
+Contig length cutoff: 23.
+
+3372 contig(s), maximum sequence length 160, minimum sequence length 22, maximum name length 10.
+Time spent on parsing contigs file: 0s.
+8 thread(s) initialized.
+Time spent on hashing contigs: 0s.
+89490 node(s) allocated, 92940 kmer(s) in contigs, 92940 kmer(s) processed.
+Time spent on graph construction: 1s.
+
+Time spent on aligning long reads: 0s.
+
+In file: soap_configs/mt.config, max seq len 100, max name len 256
+8 thread(s) initialized.
+6744 edge(s) in the graph.
+Reads on contigs    0
+Ratio               nan%
+No paired reads found.
+LIB(s) information:
+ [LIB] 0, avg_ins 0, reverse 0.
+Time spent on aligning reads: 1s.
+
+Overall time spent on alignment: 0m.
+
+
+********************
+Scaff
+********************
+
+Parameters: scaff -g results/soap/mt_k21_18_01_at_11_43_29/mt_k21 -V 
+
+Files for scaffold construction are OK.
+
+There are 0 grad(s), 0 read(s), max read len 100.
+Kmer size: 21
+There are 6744 edge(s) in edge file.
+Mask contigs with coverage lower than 0.3 or higher than 6.0, and strict length 100.
+Average contig coverage is 3, 3602 contig(s) masked.
+Mask contigs shorter than 23, 722 contig(s) masked.
+7662 arc(s) loaded, average weight is 1.
+3372 contig(s) loaded.
+Done loading updated edges.
+Time spent on loading updated edges: 0s.
+
+There are 0 grad(s), 0 read(s), max read len 100.
+*****************************************************
+Start to load paired-end reads information.
+
+All paired-end reads information loaded.
+Time spent on loading paired-end reads information: 0s.
+
+*****************************************************
+Start to construct scaffolds.
+There are 0 grad(s), 0 read(s), max read len 100.
+
+
+All links loaded.
+Time spent on constructing scaffolds: 0s.
+
+The final rank
+
+
+No scaffold was constructed.
+
+
+Done with 0 scaffolds, 0 gaps finished, 0 gaps overall.
+
+Overall time spent on constructing scaffolds: 0m.
+Time for the whole pipeline: 0m.
+
+real	0m4.387s
+user	0m6.303s
+sys	0m1.613s
+
+Version 2.04: released on July 13th, 2012
+Compile Jul  9 2013	11:57:30
+
+********************
+Pregraph
+********************
+
+Parameters: pregraph -s soap_configs/mt.config -K 31 -o results/soap/mt_k31_18_01_at_11_43_33/mt_k31 
+
+In soap_configs/mt.config, 1 lib(s), maximum read length 100, maximum name length 256.
+
+8 thread(s) initialized.
+Import reads from file:
+ reads/humanMT_reads.fasta
+Time spent on hashing reads: 0s, 10000 read(s) processed.
+LIB(s) information:
+ [LIB] 0, avg_ins 0, reverse 0.
+481637 node(s) allocated, 699650 kmer(s) in reads, 699650 kmer(s) processed.
+done hashing nodes
+456125 linear node(s) marked.
+Time spent on marking linear nodes: 0s.
+Time spent on pre-graph construction: 1s.
+
+Start to remove frequency-one-kmer tips shorter than 62.
+Total 10869 tip(s) removed.
+8 thread(s) initialized.
+5791 linear node(s) marked.
+Start to remove tips with minority links.
+571 tip(s) removed in cycle 1.
+0 tip(s) removed in cycle 2.
+Total 571 tip(s) removed.
+8 thread(s) initialized.
+0 linear node(s) marked.
+Time spent on removing tips: 0s.
+
+20892 (10446) edge(s) and 1734 extra node(s) constructed.
+Time spent on constructing edges: 1s.
+
+In file: soap_configs/mt.config, max seq len 100, max name len 256.
+8 thread(s) initialized.
+Import reads from file:
+ reads/humanMT_reads.fasta
+10000 read(s) processed.
+Time spent on:
+ importing reads: 0s,
+ chopping reads to kmers: 0s,
+ searching kmers: 0s,
+ aligning reads to edges: 0s,
+ searching (K+1)mers: 0s,
+ adding pre-arcs: 0s,
+ recording read paths: 0s.
+0 marker(s) output.
+Reads alignment done, 681 read(s) deleted, 12258 pre-arc(s) added.
+LIB(s) information:
+ [LIB] 0, avg_ins 0, reverse 0.
+Time spent on aligning reads: 1s.
+
+8182 vertex(es) output.
+Overall time spent on constructing pre-graph: 0m.
+
+
+********************
+Contig
+********************
+
+Parameters: contig -g results/soap/mt_k31_18_01_at_11_43_33/mt_k31 -M 1 -s soap_configs/mt.config 
+
+There are 8182 kmer(s) in vertex file.
+There are 20892 edge(s) in edge file.
+Kmers sorted.
+20892 edge(s) input.
+24516 pre-arcs loaded.
+5201 none-palindrome edge(s) swapped, 0 palindrome edge(s) processed.
+20892 edge(s) sorted.
+Arcs sorted.
+Start to pinch bubbles, cutoff 0.100000, MAX NODE NUM 3, MAX DIFF NUM 2.
+1544 start points, 8902 dheap nodes.
+2474 pair(s) found, 23 pair of path(s) compared, 18 pair(s) merged.
+Sequence comparison failed:
+ Path crossing deleted edge                         0
+ Length difference of two paths greater than two    0
+ Mismatch score greater than cutoff (2)             5
+ Mismatch score ratio greater than cutoff (0.1)     0
+ Path length shorter than (Kmer-1)                  0
+DFibHeap: 34 node(s) allocated.
+369 edge(s) concatenated in cycle 1.
+0 edge(s) concatenated in cycle 2.
+Time spent on pinching bubbles: 0s.
+Start to destroy weak inner edges.
+2395 weak inner edge(s) destroyed in cycle 1.
+50 weak inner edge(s) destroyed in cycle 2.
+0 weak inner edge(s) destroyed in cycle 3.
+4766 dead arc(s) removed.
+411 inner edge(s) with coverage lower than or equal to 1 destroyed.
+837 dead arc(s) removed.
+3536 edge(s) concatenated in cycle 1.
+332 edge(s) concatenated in cycle 2.
+3 edge(s) concatenated in cycle 3.
+0 edge(s) concatenated in cycle 4.
+Before compacting, 20892 edge(s) existed.
+After compacting, 6664 edge(s) left.
+
+Strict: 0, cutoff length: 62.
+948 tips cut in cycle 1.
+39 tips cut in cycle 2.
+18 tips cut in cycle 3.
+10 tips cut in cycle 4.
+9 tips cut in cycle 5.
+2 tips cut in cycle 6.
+3 tips cut in cycle 7.
+1 tips cut in cycle 8.
+0 tips cut in cycle 9.
+580 dead arc(s) removed.
+486 edge(s) concatenated in cycle 1.
+21 edge(s) concatenated in cycle 2.
+0 edge(s) concatenated in cycle 3.
+Before compacting, 6664 edge(s) existed.
+After compacting, 3590 edge(s) left.
+
+There are 957 contig(s) longer than 100, sum up 99126 bp, with average length 103.
+The longest length is 257 bp, contig N50 is 100 bp,contig N90 is 100 bp.
+1795 contig(s) longer than 32 output.
+
+Time spent on constructing contig: 0m.
+
+
+********************
+Map
+********************
+
+Parameters: map -s soap_configs/mt.config -g results/soap/mt_k31_18_01_at_11_43_33/mt_k31 -K 31 
+
+Kmer size: 31.
+Contig length cutoff: 33.
+
+1795 contig(s), maximum sequence length 257, minimum sequence length 32, maximum name length 10.
+Time spent on parsing contigs file: 0s.
+8 thread(s) initialized.
+Time spent on hashing contigs: 0s.
+105160 node(s) allocated, 106181 kmer(s) in contigs, 106181 kmer(s) processed.
+Time spent on graph construction: 0s.
+
+Time spent on aligning long reads: 0s.
+
+In file: soap_configs/mt.config, max seq len 100, max name len 256
+8 thread(s) initialized.
+3590 edge(s) in the graph.
+Reads on contigs    0
+Ratio               nan%
+No paired reads found.
+LIB(s) information:
+ [LIB] 0, avg_ins 0, reverse 0.
+Time spent on aligning reads: 1s.
+
+Overall time spent on alignment: 0m.
+
+
+********************
+Scaff
+********************
+
+Parameters: scaff -g results/soap/mt_k31_18_01_at_11_43_33/mt_k31 -V 
+
+Files for scaffold construction are OK.
+
+There are 0 grad(s), 0 read(s), max read len 100.
+Kmer size: 31
+There are 3590 edge(s) in edge file.
+Mask contigs with coverage lower than 0.4 or higher than 8.0, and strict length 100.
+Average contig coverage is 4, 912 contig(s) masked.
+Mask contigs shorter than 33, 122 contig(s) masked.
+1950 arc(s) loaded, average weight is 1.
+1795 contig(s) loaded.
+Done loading updated edges.
+Time spent on loading updated edges: 0s.
+
+There are 0 grad(s), 0 read(s), max read len 100.
+*****************************************************
+Start to load paired-end reads information.
+
+All paired-end reads information loaded.
+Time spent on loading paired-end reads information: 0s.
+
+*****************************************************
+Start to construct scaffolds.
+There are 0 grad(s), 0 read(s), max read len 100.
+
+
+All links loaded.
+Time spent on constructing scaffolds: 0s.
+
+The final rank
+
+
+No scaffold was constructed.
+
+
+Done with 0 scaffolds, 0 gaps finished, 0 gaps overall.
+
+Overall time spent on constructing scaffolds: 0m.
+Time for the whole pipeline: 0m.
+
+real	0m4.636s
+user	0m6.020s
+sys	0m1.837s
+
+Version 2.04: released on July 13th, 2012
+Compile Jul  9 2013	11:57:30
+
+********************
+Pregraph
+********************
+
+Parameters: pregraph -s soap_configs/mt.config -K 41 -o results/soap/mt_k41_18_01_at_11_43_38/mt_k41 
+
+In soap_configs/mt.config, 1 lib(s), maximum read length 100, maximum name length 256.
+
+8 thread(s) initialized.
+Import reads from file:
+ reads/humanMT_reads.fasta
+Time spent on hashing reads: 0s, 10000 read(s) processed.
+LIB(s) information:
+ [LIB] 0, avg_ins 0, reverse 0.
+480620 node(s) allocated, 599650 kmer(s) in reads, 599650 kmer(s) processed.
+done hashing nodes
+457220 linear node(s) marked.
+Time spent on marking linear nodes: 0s.
+Time spent on pre-graph construction: 0s.
+
+Start to remove frequency-one-kmer tips shorter than 82.
+Total 12179 tip(s) removed.
+8 thread(s) initialized.
+5853 linear node(s) marked.
+Start to remove tips with minority links.
+676 tip(s) removed in cycle 1.
+1 tip(s) removed in cycle 2.
+0 tip(s) removed in cycle 3.
+Total 677 tip(s) removed.
+8 thread(s) initialized.
+0 linear node(s) marked.
+Time spent on removing tips: 1s.
+
+3612 (1806) edge(s) and 93 extra node(s) constructed.
+Time spent on constructing edges: 0s.
+
+In file: soap_configs/mt.config, max seq len 100, max name len 256.
+8 thread(s) initialized.
+Import reads from file:
+ reads/humanMT_reads.fasta
+10000 read(s) processed.
+Time spent on:
+ importing reads: 0s,
+ chopping reads to kmers: 0s,
+ searching kmers: 0s,
+ aligning reads to edges: 0s,
+ searching (K+1)mers: 0s,
+ adding pre-arcs: 0s,
+ recording read paths: 0s.
+0 marker(s) output.
+Reads alignment done, 5507 read(s) deleted, 2242 pre-arc(s) added.
+LIB(s) information:
+ [LIB] 0, avg_ins 0, reverse 0.
+Time spent on aligning reads: 1s.
+
+1260 vertex(es) output.
+Overall time spent on constructing pre-graph: 0m.
+
+
+********************
+Contig
+********************
+
+Parameters: contig -g results/soap/mt_k41_18_01_at_11_43_38/mt_k41 -M 1 -s soap_configs/mt.config 
+
+There are 1260 kmer(s) in vertex file.
+There are 3612 edge(s) in edge file.
+Kmers sorted.
+3612 edge(s) input.
+4484 pre-arcs loaded.
+934 none-palindrome edge(s) swapped, 0 palindrome edge(s) processed.
+3612 edge(s) sorted.
+Arcs sorted.
+Start to pinch bubbles, cutoff 0.100000, MAX NODE NUM 3, MAX DIFF NUM 2.
+175 start points, 1631 dheap nodes.
+397 pair(s) found, 96 pair of path(s) compared, 94 pair(s) merged.
+Sequence comparison failed:
+ Path crossing deleted edge                         0
+ Length difference of two paths greater than two    0
+ Mismatch score greater than cutoff (2)             1
+ Mismatch score ratio greater than cutoff (0.1)     0
+ Path length shorter than (Kmer-1)                  1
+DFibHeap: 11 node(s) allocated.
+254 edge(s) concatenated in cycle 1.
+14 edge(s) concatenated in cycle 2.
+0 edge(s) concatenated in cycle 3.
+Time spent on pinching bubbles: 0s.
+Start to destroy weak inner edges.
+347 weak inner edge(s) destroyed in cycle 1.
+3 weak inner edge(s) destroyed in cycle 2.
+0 weak inner edge(s) destroyed in cycle 3.
+696 dead arc(s) removed.
+57 inner edge(s) with coverage lower than or equal to 1 destroyed.
+115 dead arc(s) removed.
+616 edge(s) concatenated in cycle 1.
+65 edge(s) concatenated in cycle 2.
+1 edge(s) concatenated in cycle 3.
+0 edge(s) concatenated in cycle 4.
+Before compacting, 3612 edge(s) existed.
+After compacting, 708 edge(s) left.
+
+Strict: 0, cutoff length: 82.
+203 tips cut in cycle 1.
+2 tips cut in cycle 2.
+1 tips cut in cycle 3.
+0 tips cut in cycle 4.
+128 dead arc(s) removed.
+104 edge(s) concatenated in cycle 1.
+18 edge(s) concatenated in cycle 2.
+0 edge(s) concatenated in cycle 3.
+Before compacting, 708 edge(s) existed.
+After compacting, 52 edge(s) left.
+
+There are 22 contig(s) longer than 100, sum up 17800 bp, with average length 809.
+The longest length is 4345 bp, contig N50 is 1646 bp,contig N90 is 196 bp.
+26 contig(s) longer than 42 output.
+
+Time spent on constructing contig: 0m.
+
+
+********************
+Map
+********************
+
+Parameters: map -s soap_configs/mt.config -g results/soap/mt_k41_18_01_at_11_43_38/mt_k41 -K 41 
+
+Kmer size: 41.
+Contig length cutoff: 43.
+
+26 contig(s), maximum sequence length 4345, minimum sequence length 83, maximum name length 10.
+Time spent on parsing contigs file: 0s.
+8 thread(s) initialized.
+Time spent on hashing contigs: 0s.
+17074 node(s) allocated, 17101 kmer(s) in contigs, 17101 kmer(s) processed.
+Time spent on graph construction: 0s.
+
+Time spent on aligning long reads: 0s.
+
+In file: soap_configs/mt.config, max seq len 100, max name len 256
+8 thread(s) initialized.
+52 edge(s) in the graph.
+Reads on contigs    0
+Ratio               nan%
+No paired reads found.
+LIB(s) information:
+ [LIB] 0, avg_ins 0, reverse 0.
+Time spent on aligning reads: 2s.
+
+Overall time spent on alignment: 0m.
+
+
+********************
+Scaff
+********************
+
+Parameters: scaff -g results/soap/mt_k41_18_01_at_11_43_38/mt_k41 -V 
+
+Files for scaffold construction are OK.
+
+There are 0 grad(s), 0 read(s), max read len 100.
+Kmer size: 41
+There are 52 edge(s) in edge file.
+Mask contigs with coverage lower than 0.6 or higher than 12.0, and strict length 100.
+Average contig coverage is 6, 0 contig(s) masked.
+Mask contigs shorter than 43, 4 contig(s) masked.
+52 arc(s) loaded, average weight is 4.
+26 contig(s) loaded.
+Done loading updated edges.
+Time spent on loading updated edges: 0s.
+
+There are 0 grad(s), 0 read(s), max read len 100.
+*****************************************************
+Start to load paired-end reads information.
+
+All paired-end reads information loaded.
+Time spent on loading paired-end reads information: 0s.
+
+*****************************************************
+Start to construct scaffolds.
+There are 0 grad(s), 0 read(s), max read len 100.
+
+
+All links loaded.
+Time spent on constructing scaffolds: 0s.
+
+The final rank
+
+
+No scaffold was constructed.
+
+
+Done with 0 scaffolds, 0 gaps finished, 0 gaps overall.
+
+Overall time spent on constructing scaffolds: 0m.
+Time for the whole pipeline: 0m.
+
+real	0m4.342s
+user	0m5.290s
+sys	0m1.667s
+
+Version 2.04: released on July 13th, 2012
+Compile Jul  9 2013	11:57:30
+
+********************
+Pregraph
+********************
+
+Parameters: pregraph -s soap_configs/mt.config -K 51 -o results/soap/mt_k51_18_01_at_11_43_42/mt_k51 
+
+In soap_configs/mt.config, 1 lib(s), maximum read length 100, maximum name length 256.
+
+8 thread(s) initialized.
+Import reads from file:
+ reads/humanMT_reads.fasta
+Time spent on hashing reads: 1s, 10000 read(s) processed.
+LIB(s) information:
+ [LIB] 0, avg_ins 0, reverse 0.
+439464 node(s) allocated, 499650 kmer(s) in reads, 499650 kmer(s) processed.
+done hashing nodes
+417796 linear node(s) marked.
+Time spent on marking linear nodes: 0s.
+Time spent on pre-graph construction: 1s.
+
+Start to remove frequency-one-kmer tips shorter than 102.
+Total 11309 tip(s) removed.
+8 thread(s) initialized.
+4056 linear node(s) marked.
+Start to remove tips with minority links.
+378 tip(s) removed in cycle 1.
+4 tip(s) removed in cycle 2.
+0 tip(s) removed in cycle 3.
+Total 382 tip(s) removed.
+8 thread(s) initialized.
+0 linear node(s) marked.
+Time spent on removing tips: 0s.
+
+328 (164) edge(s) and 4 extra node(s) constructed.
+Time spent on constructing edges: 0s.
+
+In file: soap_configs/mt.config, max seq len 100, max name len 256.
+8 thread(s) initialized.
+Import reads from file:
+ reads/humanMT_reads.fasta
+10000 read(s) processed.
+Time spent on:
+ importing reads: 0s,
+ chopping reads to kmers: 0s,
+ searching kmers: 0s,
+ aligning reads to edges: 0s,
+ searching (K+1)mers: 0s,
+ adding pre-arcs: 0s,
+ recording read paths: 0s.
+0 marker(s) output.
+Reads alignment done, 8505 read(s) deleted, 132 pre-arc(s) added.
+LIB(s) information:
+ [LIB] 0, avg_ins 0, reverse 0.
+Time spent on aligning reads: 1s.
+
+187 vertex(es) output.
+Overall time spent on constructing pre-graph: 0m.
+
+
+********************
+Contig
+********************
+
+Parameters: contig -g results/soap/mt_k51_18_01_at_11_43_42/mt_k51 -M 1 -s soap_configs/mt.config 
+
+There are 187 kmer(s) in vertex file.
+There are 328 edge(s) in edge file.
+Kmers sorted.
+328 edge(s) input.
+264 pre-arcs loaded.
+77 none-palindrome edge(s) swapped, 0 palindrome edge(s) processed.
+328 edge(s) sorted.
+Arcs sorted.
+Start to pinch bubbles, cutoff 0.100000, MAX NODE NUM 3, MAX DIFF NUM 2.
+109 start points, 55 dheap nodes.
+2 pair(s) found, 2 pair of path(s) compared, 2 pair(s) merged.
+Sequence comparison failed:
+ Path crossing deleted edge                         0
+ Length difference of two paths greater than two    0
+ Mismatch score greater than cutoff (2)             0
+ Mismatch score ratio greater than cutoff (0.1)     0
+ Path length shorter than (Kmer-1)                  0
+DFibHeap: 2 node(s) allocated.
+12 edge(s) concatenated in cycle 1.
+0 edge(s) concatenated in cycle 2.
+Time spent on pinching bubbles: 0s.
+Start to destroy weak inner edges.
+10 weak inner edge(s) destroyed in cycle 1.
+0 weak inner edge(s) destroyed in cycle 2.
+20 dead arc(s) removed.
+1 inner edge(s) with coverage lower than or equal to 1 destroyed.
+2 dead arc(s) removed.
+20 edge(s) concatenated in cycle 1.
+0 edge(s) concatenated in cycle 2.
+Before compacting, 328 edge(s) existed.
+After compacting, 238 edge(s) left.
+
+Strict: 0, cutoff length: 102.
+54 tips cut in cycle 1.
+0 tips cut in cycle 2.
+33 dead arc(s) removed.
+30 edge(s) concatenated in cycle 1.
+1 edge(s) concatenated in cycle 2.
+0 edge(s) concatenated in cycle 3.
+Before compacting, 238 edge(s) existed.
+After compacting, 68 edge(s) left.
+
+There are 34 contig(s) longer than 100, sum up 16738 bp, with average length 492.
+The longest length is 1205 bp, contig N50 is 665 bp,contig N90 is 253 bp.
+34 contig(s) longer than 52 output.
+
+Time spent on constructing contig: 0m.
+
+
+********************
+Map
+********************
+
+Parameters: map -s soap_configs/mt.config -g results/soap/mt_k51_18_01_at_11_43_42/mt_k51 -K 51 
+
+Kmer size: 51.
+Contig length cutoff: 53.
+
+34 contig(s), maximum sequence length 1205, minimum sequence length 186, maximum name length 10.
+Time spent on parsing contigs file: 0s.
+8 thread(s) initialized.
+Time spent on hashing contigs: 0s.
+15037 node(s) allocated, 15038 kmer(s) in contigs, 15038 kmer(s) processed.
+Time spent on graph construction: 1s.
+
+Time spent on aligning long reads: 0s.
+
+In file: soap_configs/mt.config, max seq len 100, max name len 256
+8 thread(s) initialized.
+68 edge(s) in the graph.
+Reads on contigs    0
+Ratio               nan%
+No paired reads found.
+LIB(s) information:
+ [LIB] 0, avg_ins 0, reverse 0.
+Time spent on aligning reads: 2s.
+
+Overall time spent on alignment: 0m.
+
+
+********************
+Scaff
+********************
+
+Parameters: scaff -g results/soap/mt_k51_18_01_at_11_43_42/mt_k51 -V 
+
+results/soap/mt_k51_18_01_at_11_43_42/mt_k51.Arc: no such file or empty file!
+
+There are 0 grad(s), 0 read(s), max read len 100.
+Kmer size: 51
+There are 68 edge(s) in edge file.
+Mask contigs with coverage lower than 0.3 or higher than 6.0, and strict length 0.
+Average contig coverage is 3, 0 contig(s) masked.
+Mask contigs shorter than 53, 0 contig(s) masked.
+0 arc(s) loaded, average weight is 0.
+34 contig(s) loaded.
+Done loading updated edges.
+Time spent on loading updated edges: 0s.
+
+There are 0 grad(s), 0 read(s), max read len 100.
+*****************************************************
+Start to load paired-end reads information.
+
+All paired-end reads information loaded.
+Time spent on loading paired-end reads information: 0s.
+
+*****************************************************
+Start to construct scaffolds.
+There are 0 grad(s), 0 read(s), max read len 100.
+
+
+All links loaded.
+Time spent on constructing scaffolds: 0s.
+
+The final rank
+
+
+No scaffold was constructed.
+
+
+Done with 0 scaffolds, 0 gaps finished, 0 gaps overall.
+
+Overall time spent on constructing scaffolds: 0m.
+Time for the whole pipeline: 0m.
+
+real	0m4.623s
+user	0m5.617s
+sys	0m1.467s
