@@ -1,0 +1,27 @@
+Mon Jan 18 13:40:30 2016
+ velveth results/velv/ 43,50,2 -fasta -short reads/humanMT_reads.fasta
+Version 1.2.10
+Copyright 2007, 2008 Daniel Zerbino (zerbino@ebi.ac.uk)
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+Compilation settings:
+CATEGORIES = 2
+MAXKMERLENGTH = 61
+OPENMP
+LONGSEQUENCES
+BIGASSEMBLY
+
+Mon Jan 18 13:40:45 2016
+ velvetg results/velv/_43/ -scaffolding no
+Version 1.2.10
+Copyright 2007, 2008 Daniel Zerbino (zerbino@ebi.ac.uk)
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+Compilation settings:
+CATEGORIES = 2
+MAXKMERLENGTH = 61
+OPENMP
+LONGSEQUENCES
+BIGASSEMBLY
+
+Final graph has 95 nodes and n50 of 931, max 2605, total 18283, using 0/10000 reads
